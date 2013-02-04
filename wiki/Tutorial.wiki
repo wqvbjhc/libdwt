@@ -1,0 +1,24 @@
+#summary Brief tutorial to libdwt usage.
+
+= Simple program =
+
+Include {{{libdwt.h}}} header file and call {{{dwt_util_init}}} and {{{dwt_util_finish}}} functions that allocate and release resources of the library.
+
+{{{
+#include "libdwt.h"
+
+int main()
+{
+	dwt_util_init();
+
+	// your code here
+
+	dwt_util_finish();
+
+	return 0;
+}
+}}}
+
+= Image allocation =
+
+Use {{{dwt_util_alloc_image}}} function to allocate a memory for your images. The transform is computed in-place. Thus, you do not need any extra memory allocated for handling of transform.
