@@ -21,4 +21,18 @@ int main()
 
 = Image allocation =
 
-Use {{{dwt_util_alloc_image}}} function to allocate a memory for your images. The transform is computed in-place. Thus, you do not need any extra memory allocated for handling of transform.
+Use {{{dwt_util_alloc_image}}} function to allocate a memory for your images. The transform is computed in-place. Thus, you do not need any extra memory allocated for handling of transform. Here, we will use {{{float}}} data type. Every function handling this data type has {{{_s}}} suffix. Furthermore, we consider a single-channel image. So, the distance between subsequent columns equals to {{{sizeof(float)}}}. Conversely distance between subsequent lines should be computed using {{{dwt_util_get_opt_stride}}} function.
+
+{{{
+// image sizes
+const int x = 1920, y = 1080;
+
+// image strides
+const int stride_y = sizeof(float);
+const int stride_x = dwt_util_get_opt_stride(x * sizeof(float));
+
+// image data
+void *data;
+
+dwt_util_alloc_image(&data, stride_x, stride_y, x, y);
+}}}
