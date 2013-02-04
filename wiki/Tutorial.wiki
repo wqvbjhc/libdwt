@@ -21,7 +21,7 @@ int main()
 
 = Image allocation =
 
-Use {{{dwt_util_alloc_image}}} function to allocate a memory for your images. The transform is computed in-place. Thus, you do not need any extra memory allocated for handling of transform. Here, we will use {{{float}}} data type. Every function handling this data type has {{{_s}}} suffix. Furthermore, we consider a single-channel image. So, the distance between subsequent columns equals to {{{sizeof(float)}}}. Conversely distance between subsequent lines should be computed using {{{dwt_util_get_opt_stride}}} function.
+Use {{{dwt_util_alloc_image}}} function to allocate a memory for your images. The transform is computed in-place. Thus, you do not need any extra memory allocated for handling of transform. Here, we will use {{{float}}} data type. Every function handling this data type has {{{_s}}} suffix. Furthermore, we consider a single-channel image. So, the distance between subsequent columns equals to {{{sizeof(float)}}}. Conversely distance between subsequent lines should be computed using {{{dwt_util_get_opt_stride}}} function. When you finish with your work, the allocated memory should be freed with {{{dwt_util_free_image}}} function call.
 
 {{{
 // image sizes
@@ -46,6 +46,8 @@ int j = 1;
 
 // forward transform
 dwt_cdf97_2f_s(data1, stride_x, stride_y, x, y, x, y, &j, 0, 0);
+
+// process the transform here
 
 // inverse transform
 dwt_cdf97_2i_s(data1, stride_x, stride_y, x, y, x, y, j, 0, 0);
