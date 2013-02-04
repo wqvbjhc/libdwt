@@ -38,7 +38,7 @@ dwt_util_alloc_image(&data, stride_x, stride_y, x, y);
 }}}
 
 = Performing transform =
-In this section, we focus on CDF 9/7 wavelet used in the JPEG 2000 image compression standard. Then, we want one level of decomposition (LL1, HL1, LH1 and HH1 sub-bands). The 2-D forward transform can be performed by {{{dwt_cdf97_2f_s}}} function. Analogously, the inverse transform can be performed using {{{dwt_cdf97_2i_s}}} with same parameters. Both functions work in-place.
+In this section, we focus on CDF 9/7 wavelet used in the [http://www.jpeg.org/jpeg2000/ JPEG 2000] image compression standard. Then, we want one level of decomposition (LL1, HL1, LH1 and HH1 sub-bands). The 2-D forward transform can be performed by {{{dwt_cdf97_2f_s}}} function. Analogously, the inverse transform can be performed using {{{dwt_cdf97_2i_s}}} with same parameters. Both functions work in-place.
 
 {{{
 // level of decomposition
