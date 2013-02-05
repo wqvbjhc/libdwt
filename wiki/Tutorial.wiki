@@ -38,6 +38,7 @@ dwt_util_alloc_image(&data, stride_x, stride_y, x, y);
 }}}
 
 = Performing transform =
+
 In this section, we focus on CDF 9/7 wavelet used in the [http://www.jpeg.org/jpeg2000/ JPEG 2000] image compression standard. Then, we want one level of decomposition (LL1, HL1, LH1 and HH1 sub-bands). The 2-D forward transform can be performed by {{{dwt_cdf97_2f_s}}} function. Analogously, the inverse transform can be performed using {{{dwt_cdf97_2i_s}}} with same parameters. Both functions work in-place.
 
 {{{
@@ -51,4 +52,23 @@ dwt_cdf97_2f_s(data1, stride_x, stride_y, x, y, x, y, &j, 0, 0);
 
 // inverse transform
 dwt_cdf97_2i_s(data1, stride_x, stride_y, x, y, x, y, j, 0, 0);
+}}}
+
+= Sub-band access =
+
+On each level of decomposition (on each scale), we obtain four sub-bands which correspond to the image approximation and its horizontal, vertical and diagonal edges.
+Sub-band with image approximation (LL) is preserved only on the highest level of image decomposition (the coarsest scale).
+Thus, for each scale we can obtain three sub-bands (HL, LH and HH).
+Finally, at the highest decomposition level we get all four sub-bands (LL, HL, LH and HH).
+To access to the coefficients in a particular sub-band at a certain scale, you can use the {{{dwt_util_subband_s}}} function.
+Through the parameters of this function, we pass a level of decomposition and a sub-band identifier (either {{{DWT_LL}}}, {{{DWT_HL}}}, {{{DWT_LH}}} or {{{DWT_HH}}}).
+The function will return a sub-band dimensions and a pointer to its data.
+
+{{{
+void *subband_ptr;
+int subband_size_x;
+int subband_size_y;
+
+dwt_util_subband_s(data1, stride_x, stride_y, x, y, x, y, j, DWT_LH, &subband_ptr, &subband_size_x, &subband_size_y);
+
 }}}
