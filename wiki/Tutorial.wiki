@@ -46,12 +46,12 @@ In this section, we focus on CDF 9/7 wavelet used in the [http://www.jpeg.org/jp
 int j = 1;
 
 // forward transform
-dwt_cdf97_2f_s(data1, stride_x, stride_y, x, y, x, y, &j, 0, 0);
+dwt_cdf97_2f_s(data, stride_x, stride_y, x, y, x, y, &j, 0, 0);
 
 // process the transform here
 
 // inverse transform
-dwt_cdf97_2i_s(data1, stride_x, stride_y, x, y, x, y, j, 0, 0);
+dwt_cdf97_2i_s(data, stride_x, stride_y, x, y, x, y, j, 0, 0);
 }}}
 
 = Sub-band access =
@@ -69,6 +69,6 @@ void *subband_ptr;
 int subband_size_x;
 int subband_size_y;
 
-dwt_util_subband_s(data1, stride_x, stride_y, x, y, x, y, j, DWT_LH, &subband_ptr, &subband_size_x, &subband_size_y);
+dwt_util_subband_s(data, stride_x, stride_y, x, y, x, y, j, DWT_LH, &subband_ptr, &subband_size_x, &subband_size_y);
 
 }}}
