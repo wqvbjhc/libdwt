@@ -89,5 +89,5 @@ make ARCH=x86_64 BUILD=release -C src libdwt.a
 }}}
 
 Currently, the {{{x86_64}}} and {{{microblaze}}} architectures are supported.
-Now, you can use the library in your program (link with libdwt.a).
-Look at {{{example}}} directory for understanding the use of this library.
+Now, you can use the library in your program (include {{{libdwt.h}}} and link against {{{libdwt.a}}}).
+Further, look at {{{example}}} directory for understanding the use of this library.
