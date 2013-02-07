@@ -1,5 +1,16 @@
 #summary Brief tutorial to libdwt usage.
 
+= Compiling =
+First, download and unpack library source codes. Then, compile the libdwt static library like follows.
+
+{{{
+make ARCH=x86_64 BUILD=release -C src libdwt.a
+}}}
+
+Currently, the {{{x86_64}}} and {{{microblaze}}} architectures are supported.
+Now, you can use the library in your program (include {{{libdwt.h}}} and link against {{{libdwt.a}}}).
+Further, look at {{{example}}} directory for understanding the use of this library.
+
 = Simple program =
 
 Include {{{libdwt.h}}} header file and call {{{dwt_util_init}}} and {{{dwt_util_finish}}} functions that allocate and release resources of the library.
@@ -80,14 +91,3 @@ The address of any coefficient (or pixel) can be computed using {{{dwt_util_addr
 {{{
 float *coeff = dwt_util_addr_coeff_s(data, y, x, stride_x, stride_y);
 }}}
-
-= Compiling =
-First, download and unpack library source codes. Then, compile the libdwt static library like follows.
-
-{{{
-make ARCH=x86_64 BUILD=release -C src libdwt.a
-}}}
-
-Currently, the {{{x86_64}}} and {{{microblaze}}} architectures are supported.
-Now, you can use the library in your program (include {{{libdwt.h}}} and link against {{{libdwt.a}}}).
-Further, look at {{{example}}} directory for understanding the use of this library.
