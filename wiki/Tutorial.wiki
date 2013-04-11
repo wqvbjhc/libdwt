@@ -91,3 +91,6 @@ The address of any coefficient (or pixel) can be computed using {{{dwt_util_addr
 {{{
 float *coeff = dwt_util_addr_coeff_s(data, y, x, stride_x, stride_y);
 }}}
+
+= Data types =
+The libdwt library currently supports single precision floating point type ({{{single}}}), double precision floating point type ({{{double}}}) and integer type ({{{int}}}). The corresponding functions have suffixes {{{_s}}} (single precision FP), {{{_d}}} (double precision FP) and {{{_i}}} (integer).
