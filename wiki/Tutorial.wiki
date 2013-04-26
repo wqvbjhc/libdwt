@@ -94,4 +94,12 @@ float *coeff = dwt_util_addr_coeff_s(data, y, x, stride_x, stride_y);
 }}}
 
 = Data types =
-The libdwt library currently supports single precision floating point type ({{{single}}}), double precision floating point type ({{{double}}}) and integer type ({{{int}}}). The corresponding functions have suffixes {{{_s}}} (single precision FP), {{{_d}}} (double precision FP) and {{{_i}}} (integer).
+The libdwt library currently supports single precision floating point type ({{{single}}}), double precision floating point type ({{{double}}}) and integer type ({{{int}}}). The corresponding functions have suffixes {{{_s}}} (single precision FP), {{{_d}}} (double precision FP) and {{{_i}}} (integer). The situation is illustrated in the following table.
+
+|| *transform* || *float* || *double* || *int* ||
+|| CDF 5/3     || yes     || yes      || yes   ||
+|| CDF 9/7     || yes^*^  || yes      || yes   ||
+
+Notes:
+<br>
+^*^ accelerated with SSE (PC platform) or BCE (ASVP platform)
