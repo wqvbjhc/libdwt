@@ -7,7 +7,7 @@ First, download and unpack library source codes. Then, compile the libdwt static
 make ARCH=x86_64 BUILD=release -C src libdwt.a
 }}}
 
-Currently, the {{{x86_64}}}, {{{armv6l}}} and {{{microblaze}}} architectures are supported.
+Currently, the {{{x86_64}}}, {{{armv7l}}}, {{{armv6l}}} and {{{microblaze}}} architectures are supported.
 Now, you can use the library in your program (include {{{libdwt.h}}} and link against {{{libdwt.a}}}).
 Finally, do not forget to link your application also with {{{-lm}}}, {{{-lrt}}}, and enable OpenMP with {{{-fopenmp}}}.
 Further, look at {{{example}}} directory for understanding the use of this library.
