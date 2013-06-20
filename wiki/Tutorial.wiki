@@ -103,3 +103,18 @@ The libdwt library currently supports single precision floating point type ({{{s
 Notes:
 <br>
 ^*^ accelerated with SSE (PC platform) or BCE (ASVP platform)
+
+= Feature description =
+Once the image is transformed into discrete wavelet transform, the feature vector can be extracted using one of the following functions. Vector elements correspond to the subbands.
+
+ * {{{dwt_util_wps_s}}} – the rectified wavelet power spectra
+ * {{{dwt_util_maxidx_s}}} – the indices of coefficients with maximal magnitudes
+ * {{{dwt_util_mean_s}}} – the arithmetic means
+ * {{{dwt_util_med_s}}} – the medians
+ * {{{dwt_util_var_s}}} – the variances
+ * {{{dwt_util_stdev_s}}} – the standard deviations
+ * {{{dwt_util_skew_s}}} – the skewnesses
+ * {{{dwt_util_kurt_s}}} – the kurtosises
+ * {{{dwt_util_maxnorm_s}}} – the maximum norms
+ * {{{dwt_util_lpnorm_s}}} – the p-norms
+ * {{{dwt_util_norm_s}}} – the Euclidean norms
