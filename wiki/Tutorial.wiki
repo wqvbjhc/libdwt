@@ -7,7 +7,15 @@ First, download and unpack library source codes. Then, compile the libdwt static
 make ARCH=x86_64 BUILD=release -C src libdwt.a
 }}}
 
-Currently, the {{{x86_64}}}, {{{armv7l}}}, {{{armv6l}}} and {{{microblaze}}} architectures are supported.
+Currently, following architectures are supported.
+
+|| *architecture* || *description* ||
+|| {{{x86_64}}} || AMD64, EM64T ||
+|| {{{microblaze}}} || MicroBlaze core in Xilinx FPGA ||
+|| {{{asvp}}} || UTIA's ASVP platform ||
+|| {{{armv6l}}} || ARM11 family, e.g. Raspberry Pi ||
+|| {{{armv7l}}} || Cortex-A8 family, e.g. Nokia N900 ||
+
 Now, you can use the library in your program (include {{{libdwt.h}}} and link against {{{libdwt.a}}}).
 Finally, do not forget to link your application also with {{{-lm}}}, {{{-lrt}}}, and enable OpenMP with {{{-fopenmp}}}.
 Further, look at {{{example}}} directory for understanding the use of this library.
