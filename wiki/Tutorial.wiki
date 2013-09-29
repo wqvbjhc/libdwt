@@ -113,7 +113,7 @@ Notes:
 ^*^ accelerated with SSE (PC platform) or BCE (ASVP platform)
 
 = Feature description =
-Once the image is transformed into discrete wavelet transform, the feature vector can be extracted using one of the following functions. Vector elements correspond to the subbands.
+Once the image is transformed into discrete wavelet transform, the feature vector can be extracted using one of the following aggregate functions. Vector elements correspond to the subbands.
 
  * {{{dwt_util_wps_s}}} – the rectified wavelet power spectra
  * {{{dwt_util_maxidx_s}}} – the indices of coefficients with maximal magnitudes
